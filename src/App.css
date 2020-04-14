@@ -1,38 +1,72 @@
-.App {
-  text-align: center;
+.app {
+  padding: 20px;
+  background-color: #EDEEF0;
+  height: 100vh;
+  display: grid;
+  grid-template-areas:
+  "Macro View Log"
+  "Macro Controls Log";
+  grid-row-gap: 15px;
+  grid-column-gap: 15px;
+  grid-template-columns: 100px 1fr 300px;
+  grid-template-rows: 1fr 200px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.macro-commands {
+  grid-area: Macro;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.macro-commands button {
+  margin: 4px 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.twojs-container {
+  grid-area: View;
+  /*border: 1px solid #222;*/
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0 0 3px #333;
 }
 
-.App-link {
-  color: #61dafb;
+.log {
+  grid-area: Log;
+  grid-row-gap: 5px;
+  overflow-y: auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.controls {
+  grid-area: Controls;
+  border: 1px;
+  display: grid;
+  grid-column-gap: 20px;
+  grid-template-columns: repeat(6, auto);
+}
+
+.controls input, select {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.about {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  cursor: pointer;
+  text-shadow: 0 0 1px #111;
+  text-align: right;
+}
+
+.about-popup {
+  display: none;
+  text-align: left;
+  max-width: 500px;
+  padding: 20px;
+  background-color: #EDEEF0;
+  border-radius: 5px;
+  box-shadow: 0 0 3px #000;
+}
+
+.about:hover > .about-popup {
+  display: block;
+
 }
